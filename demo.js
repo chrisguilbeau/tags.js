@@ -17,7 +17,7 @@ function getBody(){
 			t.button(
 				{onclick : "alert(1);"},
 				"This is a button"
-				)
+			)
 		)
 	);
 }
