@@ -1,4 +1,5 @@
 window.onload = init;
+const RANDOM = Math.floor(Math.random() * 11)
 var t = tags;
 
 function getBody(){
@@ -18,6 +19,14 @@ function getBody(){
 				{onclick : "alert(1);"},
 				"This is a button"
 			)
+		),
+		t.span('Next is an example of expanding an array into elements'),
+		t.seq(
+			[1,2,3,4,5,6].map(function(i){return t.div('N:' + i.toString());})
+		),
+		t.div(
+			{style: (RANDOM > 5) ? 'background: red;' : t.absent},
+			'This div is either red or not'
 		)
 	);
 }

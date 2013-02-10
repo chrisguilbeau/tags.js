@@ -28,7 +28,11 @@ for (var i in _tags){
 					var arg = arguments[j];
 					if (typeof arg === 'object'){
 						for (var k in arg){
-							_attrs.push(k + " = " + "\"" + arg[k] + "\"");
+							var v = arg[k];
+							if (v === t.present)
+								v = k;
+							if (!v === t.absent)
+								_attrs.push(k + " = " + "\"" + arg[k] + "\"");
 						}
 					}
 					else
@@ -42,3 +46,10 @@ for (var i in _tags){
 			}
 	}(_tag))
 }
+
+tags.seq = function(arr){
+	return arr.join("");
+}
+
+tags.present = true;
+tags.absent = false;
