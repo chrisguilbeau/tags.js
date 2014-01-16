@@ -29,9 +29,9 @@ for (var i in _tags){
 					if (typeof arg === 'object'){
 						for (var k in arg){
 							var v = arg[k];
-							if (v === t.present)
+							if (v === tags.present)
 								v = k;
-							if (!v === t.absent)
+							if (!v === tags.absent)
 								_attrs.push(k + " = " + "\"" + arg[k] + "\"");
 						}
 					}
